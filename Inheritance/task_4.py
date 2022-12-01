@@ -20,7 +20,7 @@ class Moderator(User):
 
 
 user_1 = User("Морда", "бебебе")
-user_2 = Moderator("Модератор")
+user_2 = Moderator(" ")
 user_1.view()
 user_2.view()
 user_2.redact()
