@@ -1,5 +1,5 @@
 import hashlib
-from task6 import checker
+from task_6 import checker
 
 
 class User:
@@ -19,7 +19,7 @@ class User:
         self.get_hash(pasw)
 
     def get_hash(self, str):
-        self.password = hashlib.md5(str.encode("utf8"))
+        self.pasw = hashlib.md5(str.encode("utf8"))
 
 
 User_1 = User()
