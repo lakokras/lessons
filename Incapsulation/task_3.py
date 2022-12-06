@@ -27,11 +27,11 @@ class Box:
         return self.__target_city
 
 
-box = Box(randint, 'Name: Arny', 'From_city: Chicago', 'Target_city: Minsk')
-print(box.postcode)
-print(box.name)
-print(box.from_city)
-print(box.target_city)
+b = Box(randint, "Name: Arny", "From_city: Chicago", "Target_city: Minsk")
+print(b.postcode)
+print(b.name)
+print(b.from_city)
+print(b.target_city)
 
-box.target_city = 'New_target_city: Berlin'
-print(box.target_city)
+b.target_city = "New_target_city: Berlin"
+print(b.target_city)
