@@ -1,37 +1,31 @@
-class Matrix():
+import copy
 
-    def __init__(self, lst):
-        self.lst = lst
+class Matrix:
+    def __init__(self, matrix):
+        self.matrix = matrix
 
     def __str__(self):
-        for i in range(len(self.lst)):
-            lst = []
-            for j in range(len(self.lst[i])):
-                lst.append(f"{self.lst[i][j]}")
-            print("  ". join(lst))
-        return " "
+        s = ''
+        for i in range(len(self.matrix)):
+            s = s + '\t'.join(map(str,self.matrix[i])) + '\n'
+        return s
 
     def __add__(self, other):
-        BB = []
-        for i in range(len(self.lst)):
-            lst = []
-            oldLst = []
-            newLst = []
-
-            for j in range(len(self.lst[i])):
-                lst.append(self.lst[i][j])
-                oldLst.append(other[i][j])
-
-            for i in range(len(lst)):
-                newLst.append(lst[i] + oldLst[i]) 
-
-            BB.append(newLst)
-        return BB
+        if len(self.matrix) != len(other.matrix):
+            return None
+        res = copy.deepcopy(self.matrix)
+        for i in range(len(self.matrix)):                                    
+            for j in range(len(self.matrix[i])):
+                res[i][j] = self.matrix[i][j] + other.matrix[i][j]
+        return Matrix(res)
 
 
-m1 = Matrix([[1,2,3],[4,5,6]])
-m2 = Matrix([[6,5,4],[3,2,1]])
-
-m3 = m1 + [[6,5,4],[3,2,1]] 
-m3 = Matrix(m3)
-str(m3)
+m1 = [[1,2,3], [4,5,6]]
+m2 = [[6,5,4], [3,2,1]]
+m = Matrix(m1)
+s = Matrix(m2)
+print(m)
+n = m + s
+print('new')
+print(n)
+print(type(n))
