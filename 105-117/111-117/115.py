@@ -1,13 +1,17 @@
-FILENAME = "Books.csv"
-file = open(FILENAME, "r")
+fileName = "Books.csv"
+
+file = open(fileName, "r")
 length = len(file.read().split("\n"))
 file.close()
 
-lst = []
+list = []
 
-file = open(FILENAME, "r")
+file = open(fileName, "r")
+
 for i in range(length):
-    lst.append(i + 1)
-for i, row in zip(lst, file):
+    list.append(i + 1)
+
+for i, row in zip(list, file):
     print(f"{i}) {row}")
+
 file.close()

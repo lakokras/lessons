@@ -1,15 +1,16 @@
-FILENAME = "Books.csv"
-file = open(FILENAME, "a")
+fileName = "Books.csv"
+file = open(fileName, "a")
 
-name = input("Название книги: ")
+books = input("Название книги: ")
 author = input("Автор: ")
-age = input("Год: ")
+year = input("Год: ")
 
-newRecord = name + ", " + author + ", " + age + "\n"
+newBook = books + ", " + author + ", " + year + "\n"
 
-file.write(str(newRecord))
+file.write(str(newBook))
 file.close()
-file = open(FILENAME, "r")
+file = open(fileName, "r")
+
 for row in file:
-    print(row)  
+    print(row)
 file.close()

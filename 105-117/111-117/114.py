@@ -1,14 +1,17 @@
 import re
-FILENAME = "Books.csv"
-lst = []
-file = open(FILENAME, "r")
-startYear = int(input('Начальный год: '))
-endYear = int(input('Конечный год: '))
+
+
+fileName = "Books.csv"
+
+file = open(fileName, "r")
+yearSec = int(input('Начальный год: '))
+yearEnd = int(input('Конечный год: '))
 
 for row in file:
-    if startYear < int((re.search(r'(\d+)', row)).group()) < endYear:
+    if row in range (yearSec - 1, yearEnd + 1):
         print(row)
         break
-    print("Книг в таком промежутке не существует!")
+    print("Книги в таком промежутке не существует!")
     break
+
 file.close()

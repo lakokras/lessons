@@ -1,22 +1,25 @@
-FILENAME = "Books.csv"
-file = open(FILENAME, "a")
+fileName = "Books.csv"
+file = open(fileName, "a")
 
 count = input("Сколько записей добавить: ")
+
 for i in range(int(count)):
-    name = input("Название книги: ")
+    books = input("Название книги: ")
     author = input("Автор: ")
-    age = input("Год: ")
-    newRecord = name + ", " + author + ", " + age + "\n"
-    file.write(str(newRecord))
+    year = input("Год: ")
+    newBook = books + ", " + author + ", " + year + "\n"
+    file.write(str(newBook))
 
 author = input("Введите автора, чьи книги вы хотите получить: ")
 file.close()
 
-file = open(FILENAME, "r")
+file = open(fileName, "r")
+
 for row in file:
     if author in row:
         print(row)
     else: 
-        print("Книг с таким автором не существует!")
+        print("Книги с таким автором не существует!")
         break
+
 file.close()

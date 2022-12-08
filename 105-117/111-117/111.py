@@ -1,7 +1,7 @@
-FILENAME = "Books.csv"
-file = open(FILENAME, "a")
+fileName = "Books.csv"
+file = open(fileName, "a")
 
-names = [
+books = [
     "To Kill a Mockingbird",
     "A Brief History of Time",
     "The Great Gatsby",
@@ -15,13 +15,15 @@ authors = [
     "Oliver Sacks",
     "Jan Austen"]
     
-ages = [1960, 1988, 1922, 1985, 1813]
+year = [1960, 1988, 1922, 1985, 1813]
 
-for i in range(len(names)):
-    newRecord = names[i] + ", " + authors[i] + ", " + str(ages[i]) + "\n"
-    file.write(str(newRecord))
+for i in range(len(books)):
+    newBook = books[i] + ", " + authors[i] + ", " + str(year[i]) + "\n"
+    file.write(str(newBook))
+
 file.close()
 file = open("Books.csv", "r")
+
 for row in file:
     print(row)  
 file.close()
